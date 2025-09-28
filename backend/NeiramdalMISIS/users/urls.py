@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import RegisterView, ProfileView
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from .views import MissionListView, MissionCreateView, MissionByRankView, MissionUpdateView
 
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('profile/', ProfileView.as_view(), name='profile'),
+    path('missions/', MissionListView.as_view(), name='mission-list'),               # GET
+    path('missions/create/', MissionCreateView.as_view(), name='mission-create'),    # POST
+    path('missions/rank/<str:rank>/', MissionByRankView.as_view(), name='mission-rank'),  # GET
+    path('missions/update/<int:id>/', MissionUpdateView.as_view(), name='mission-update'),  # PUT/PATCH
 ]

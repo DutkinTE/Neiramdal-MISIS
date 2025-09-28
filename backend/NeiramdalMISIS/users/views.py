@@ -1,15 +1,35 @@
 from rest_framework import generics, permissions
-from .serializers import RegisterSerializer, UserSerializer
-from django.contrib.auth.models import User
+from .models import Mission
+from .serializers import MissionSerializer
 
-class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    permission_classes = (permissions.AllowAny,)
-    serializer_class = RegisterSerializer
 
-class ProfileView(generics.RetrieveAPIView):
-    serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+# 1. Список всех Missions
+class MissionListView(generics.ListAPIView):
+    queryset = Mission.objects.all()
+    serializer_class = MissionSerializer
+    permission_classes = [permissions.AllowAny]
 
-    def get_object(self):
-        return self.request.user
+
+# 2. Создание Missions
+class MissionCreateView(generics.CreateAPIView):
+    queryset = Mission.objects.all()
+    serializer_class = MissionSerializer
+    permission_classes = [permissions.AllowAny]
+
+
+# 3. Выдача Missions по rank
+class MissionByRankView(generics.ListAPIView):
+    serializer_class = MissionSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_queryset(self):
+        rank = self.kwargs['rank']
+        return Mission.objects.filter(rank=rank)
+
+
+# 4. Update Missions
+class MissionUpdateView(generics.UpdateAPIView):
+    queryset = Mission.objects.all()
+    serializer_class = MissionSerializer
+    permission_classes = [permissions.AllowAny]
+    lookup_field = "id"  # обновление по id
