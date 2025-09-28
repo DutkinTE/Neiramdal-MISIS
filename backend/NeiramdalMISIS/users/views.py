@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
-from .models import Mission
-from .serializers import MissionSerializer
+from .models import Mission, TableMissions
+from .serializers import MissionSerializer, TableMissionsSerializer
 
 
 # 1. Список всех Missions
@@ -33,3 +33,9 @@ class MissionUpdateView(generics.UpdateAPIView):
     serializer_class = MissionSerializer
     permission_classes = [permissions.AllowAny]
     lookup_field = "id"  # обновление по id
+
+# 5. Создание Missions
+class TableMissionsCreateView(generics.CreateAPIView):
+    queryset = TableMissions.objects.all()
+    serializer_class = TableMissionsSerializer
+    permission_classes = [permissions.AllowAny]

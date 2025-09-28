@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
-from .models import Mission
+from .models import Mission, TableMissions
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
@@ -33,7 +33,13 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'email', 'first_name', 'last_name')
 
+
 class MissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mission
+        fields = '__all__'
+
+class TableMissionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TableMissions
         fields = '__all__'
