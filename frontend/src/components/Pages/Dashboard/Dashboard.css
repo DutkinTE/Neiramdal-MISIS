@@ -1,5 +1,16 @@
+.Dashboard-block {
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+
 .Dashboard-upperStatistics {
     display: flex;
     flex-direction: row;
+    gap: 2rem;
+}
+
+.Dashboard-centerBlocks {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }

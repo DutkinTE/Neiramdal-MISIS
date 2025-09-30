@@ -11,7 +11,7 @@ const LogInPage: React.FC = () => {
         e.preventDefault();
         
         if (login.trim() && password.trim()) {
-            navigate('/mainPage');
+            navigate('/dashboard');
         }
     };
 

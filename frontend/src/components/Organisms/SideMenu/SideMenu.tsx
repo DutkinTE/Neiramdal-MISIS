@@ -50,7 +50,7 @@ const SideMenu = () => {
                         activeIcon="/assets/controlsHeavy.svg" 
                         alt="Icon"
                         title="Редактор"
-                        to="/edit" 
+                        to="/editor" 
                     />
                     <MenuChoose 
                         srcIcon="/assets/UsersThin.svg"

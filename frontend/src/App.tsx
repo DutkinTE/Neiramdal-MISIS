@@ -1,9 +1,9 @@
 import './App.css'
 import SideMenu from "./components/Organisms/SideMenu/SideMenu";
 import { Routes, Route, useLocation } from 'react-router-dom';
-import MainPage from "./components/Pages/MainPage/MainPage"
 import LogInPage from "./components/Pages/LogInPage/LogInPage"
 import Dashboard from "./components/Pages/Dashboard/Dashboard"
+import EditorPage from "./components/Pages/EditorPage/EditorPage"
 
 function App() {
   const location = useLocation();
@@ -15,10 +15,11 @@ function App() {
       
       <div className='App_content'>
         <Routes>
-          <Route path="/mainPage" element={<MainPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/logIn" element={<LogInPage />} />
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/editor" element={<EditorPage />} />
+          
         </Routes>
       </div>
     </div>
