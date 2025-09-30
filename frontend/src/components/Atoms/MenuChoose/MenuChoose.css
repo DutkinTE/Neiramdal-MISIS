@@ -1,0 +1,40 @@
+.MenuChoose {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 17.9rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: relative;
+    text-decoration: none; 
+    color: inherit; 
+    font-weight: 300; 
+}
+
+.MenuChoose:not(.MenuChoose--active):hover {
+    background-color: var(--lightThemeBackgraundActive);
+    transition: 0.3s;
+}
+
+.MenuChoose--active {
+    background-color: var(--lightThemeBackgraundPress);
+    color: var(--mainLightThemeTextColorActive);
+    font-weight: 400; 
+    transition: 0.3s;
+}
+
+
+.MenuChoose_title {
+    flex: 1;
+    margin: 0;
+    font-weight: inherit; 
+}
+
+.MenuChoose_badge {
+    background-color: var(--lightThemeAccentColor);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: auto;
+}

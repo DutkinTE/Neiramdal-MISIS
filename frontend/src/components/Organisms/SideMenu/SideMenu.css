@@ -1,0 +1,46 @@
+.SideMenu {
+    background-color: var(--lightThemeBackgroundBlockColor);
+    width:fit-content;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+
+.SideMenu-h4Titles {
+    font-weight: 500;
+}
+
+.SideMenu_line {
+    width: 235px;
+    height: 1px;
+    background-color: hsla(213, 28%, 40%, 0.300);
+    border-radius: 95px;
+}
+
+.SideMenu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.SideMenu_bloc-nav {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+.SideMenu_upper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.SideMenu_upper > :first-child {
+    margin-bottom: 32px;
+}
+

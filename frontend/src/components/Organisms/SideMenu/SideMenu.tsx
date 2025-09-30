@@ -1,0 +1,95 @@
+import React from 'react';
+import "./SideMenu.css";
+import MenuChoose from '../../Atoms/MenuChoose/MenuChoose.tsx';
+
+const SideMenu = () => {
+  return (
+    <div className='SideMenu'>
+        <div className='SideMenu_upper'>
+            <img alt='logo' className='logoAlabuga' src='/assets/logo.svg'></img>
+
+            <div className='SideMenu_monitoring SideMenu_bloc-nav'>
+            <h4>Мониторинг</h4>
+            <div className='SideMenu-nav'>
+                <MenuChoose 
+                srcIcon="/assets/dashboardThin.svg"
+                activeIcon="/assets/dashboardHeavy.svg" 
+                alt="Icon"
+                title="Дашборд"
+                to="/dashboard" 
+                />
+                <MenuChoose 
+                srcIcon="/assets/documentThin.svg"
+                activeIcon="/assets/documentHeavy.svg" 
+                alt="Icon"
+                title="Заявки"
+                to="/applications" 
+                badgeText="14" /// сюда бэк передайте с кол-вом заявок
+                />
+            </div>
+            </div>
+
+            <div className='SideMenu_control SideMenu_bloc-nav'>
+                <h4 className='SideMenu-h4Titles'>Управление</h4>
+                <div className='SideMenu-nav'>
+                    <MenuChoose 
+                        srcIcon="/assets/controlsThin.svg"
+                        activeIcon="/assets/controlsHeavy.svg" 
+                        alt="Icon"
+                        title="Редактор"
+                        to="/edit" 
+                    />
+                    <MenuChoose 
+                        srcIcon="/assets/UsersThin.svg"
+                        activeIcon="/assets/UsersHeavy.svg" 
+                        alt="Icon"
+                        title="Пользователи"
+                        to="/Users" 
+                    />
+                </div>
+            </div>
+
+            <div className='SideMenu_line'></div>
+
+            <div className='SideMenu_account SideMenu_bloc-nav'>
+                <h4>Аккаунт</h4>
+                <div className='SideMenu-nav'>
+                <MenuChoose 
+                    srcIcon="/assets/settingsThin.svg"
+                    activeIcon="/assets/settingsHeavy.svg" 
+                    alt="Icon"
+                    title="Настройки"
+                    to="/settings" 
+                />
+                <MenuChoose 
+                    srcIcon="/assets/settingsThin.svg"
+                    activeIcon="/assets/settingsHeavy.svg" 
+                    alt="Icon"
+                    title="Темная тема !!!"
+                    to="/darkTheme"  //доделать
+                />
+                <MenuChoose 
+                    srcIcon="/assets/logOutThin.svg"
+                    activeIcon="/assets/logOutHeavyRed.svg" 
+                    alt="Icon"
+                    title="Выйти !!"
+                    to="/logout"  
+                />
+            </div>
+                
+            </div>
+        </div>
+        <div className='SideMenu_lower'>
+            <MenuChoose 
+                    srcIcon="/assets/questionThin.svg"
+                    activeIcon="/assets/questionHeavy.svg" 
+                    alt="Icon"
+                    title="Помощь"
+                    to="/help" 
+                />
+        </div>
+    </div>
+  );
+}
+
+export default SideMenu;
