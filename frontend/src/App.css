@@ -1,0 +1,14 @@
+.App {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+}
+
+.App_content {
+    background-color: var(--your-background-color);
+}
+
+
+.App--login {
+    grid-template-columns: 1fr;
+}

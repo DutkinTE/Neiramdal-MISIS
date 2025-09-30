@@ -48,7 +48,7 @@ const LogInPage: React.FC = () => {
                                 <h4>Логин</h4>
                                 <input 
                                     type="text" 
-                                    placeholder='Введите логин'
+                                    placeholder='ivanov.ivan@alabuga.ru'
                                     value={login}
                                     onChange={(e) => setLogin(e.target.value)}
                                     required
@@ -59,7 +59,7 @@ const LogInPage: React.FC = () => {
                                 <h4>Пароль</h4>
                                 <input 
                                     type="password"
-                                    placeholder='Введите пароль'
+                                    placeholder='алабугалучшая2025'
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
