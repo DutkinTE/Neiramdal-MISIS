@@ -9,7 +9,9 @@
     box-sizing: border-box;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    
+    position: fixed; 
+    left: 0; 
+    top: 0;
 }
 
 .SideMenu-h4Titles {

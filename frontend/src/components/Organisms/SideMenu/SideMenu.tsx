@@ -1,8 +1,21 @@
-import React from 'react';
+import { useState } from 'react';
 import "./SideMenu.css";
 import MenuChoose from '../../Atoms/MenuChoose/MenuChoose.tsx';
+import SureLogeOut from '../../Molecules/SureLogeOut/SureLogeOut.tsx';
 
 const SideMenu = () => {
+
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+    const handleLogoutClick = (e: React.MouseEvent) => {
+      e.preventDefault(); 
+      setShowLogoutModal(true);
+    };
+  
+    const closeModal = () => {
+      setShowLogoutModal(false);
+    };
+
   return (
     <div className='SideMenu'>
         <div className='SideMenu_upper'>
@@ -68,13 +81,15 @@ const SideMenu = () => {
                     title="Темная тема !!!"
                     to="/darkTheme"  //доделать
                 />
-                <MenuChoose 
-                    srcIcon="/assets/logOutThin.svg"
-                    activeIcon="/assets/logOutHeavyRed.svg" 
-                    alt="Icon"
-                    title="Выйти !!"
-                    to="/logout"  
-                />
+                <div onClick={handleLogoutClick}>
+                    <MenuChoose 
+                        srcIcon="/assets/logOutThin.svg"
+                        activeIcon="/assets/logOutHeavyRed.svg" 
+                        alt="Icon"
+                        title="Выйти"
+                        to="#" 
+                    />
+                </div>
             </div>
                 
             </div>
@@ -88,6 +103,7 @@ const SideMenu = () => {
                     to="/help" 
                 />
         </div>
+        {showLogoutModal && <SureLogeOut onClose={closeModal} />}
     </div>
   );
 }

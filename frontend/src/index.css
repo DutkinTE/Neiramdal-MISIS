@@ -8,18 +8,26 @@
   --lightThemeBackgraundActive: #E9F2FF;
   --lightThemeBackgraundPress: #D1E3FF;
   --lightThemeBackgroundTitleColor: #000000;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 html {
   font-size: 75%; 
-  margin: 0;
-  padding: 0;
   background-color: #404040;
 }
 body {
   font-family: "Inter", sans-serif;
   color: var(--mainLightTextColor);
-  
 }
 
 h1,h2,h3,h4,h5,h6 {
