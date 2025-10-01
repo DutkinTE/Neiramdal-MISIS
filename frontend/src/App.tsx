@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import LogInPage from "./components/Pages/LogInPage/LogInPage"
 import Dashboard from "./components/Pages/Dashboard/Dashboard"
 import EditorPage from "./components/Pages/EditorPage/EditorPage"
+import SettingPage from './components/Pages/SettingPage/SettingPage'
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function App() {
           <Route path="/logIn" element={<LogInPage />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/editor" element={<EditorPage />} />
-          
+          <Route path='/settings' element={<SettingPage/>}/>
         </Routes>
       </div>
     </div>

@@ -1,0 +1,18 @@
+.MockPage_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.MockPage_block img {
+    width: 500px;
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+

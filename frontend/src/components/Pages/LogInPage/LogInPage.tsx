@@ -19,12 +19,12 @@ const LogInPage: React.FC = () => {
         <div className='LogInPage'>
 
 <img 
-                src="../../../../public/assets/aklabugaSvgBackgroundIcon.svg" 
+                src="/assets/aklabugaSvgBackgroundIcon.svg" 
                 alt="" 
                 className='LogInPage_bgIcon LogInPage_bgIcon--topRight'
             />
             <img 
-                src="../../../../public/assets/aklabugaSvgBackgroundIcon.svg" 
+                src="/assets/aklabugaSvgBackgroundIcon.svg" 
                 alt="" 
                 className='LogInPage_bgIcon LogInPage_bgIcon--bottomLeft'
             />
