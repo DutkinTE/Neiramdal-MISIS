@@ -17,7 +17,7 @@ class EditorPage extends Component<{}, EditorPageState> {
     super(props);
     this.state = {
       activeTab: 'info',
-      hasSelectedMission: true // временно true для демонстрации
+      hasSelectedMission: true 
     };
   }
 
@@ -90,23 +90,29 @@ class EditorPage extends Component<{}, EditorPageState> {
     const { activeTab, hasSelectedMission } = this.state;
 
     return (
-      <div className='editorPage'>
-        <EditorHeader 
-          activeTab={activeTab} 
-          onTabChange={this.handleTabChange} 
-        />
-        
-        <div className='editorPage-content'>
-          {this.renderContent()}
+        <div>
+            <div className='editorPage'>
+                <div>
+                    <EditorHeader 
+                    activeTab={activeTab} 
+                    onTabChange={this.handleTabChange} 
+                    />
+                    
+                    <div className='editorPage-content'>
+                    {this.renderContent()}
+                    </div>
+                </div>
+                
+                
+                <EditorActions
+                onDuplicate={this.handleDuplicate}
+                onDelete={this.handleDelete}
+                onSave={this.handleSave}
+                hasSelectedMission={hasSelectedMission}
+                />
+            </div>
         </div>
-        
-        <EditorActions
-          onDuplicate={this.handleDuplicate}
-          onDelete={this.handleDelete}
-          onSave={this.handleSave}
-          hasSelectedMission={hasSelectedMission}
-        />
-      </div>
+      
     );
   }
 }

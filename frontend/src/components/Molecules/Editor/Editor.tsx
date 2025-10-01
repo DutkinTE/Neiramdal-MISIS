@@ -59,7 +59,7 @@ export class Editor extends Component<EditorProps, EditorState> {
                 type="text"
                 value={missionName}
                 onChange={this.handleMissionNameChange}
-                placeholder="Введите название миссии"
+                placeholder="Текст"
               />
             </div>
             
@@ -69,7 +69,7 @@ export class Editor extends Component<EditorProps, EditorState> {
                 className='editor-input editor-input--textarea'
                 value={missionDescription}
                 onChange={this.handleDescriptionChange}
-                placeholder="Введите описание миссии"
+                placeholder="Текст"
                 rows={5}
               />
             </div>

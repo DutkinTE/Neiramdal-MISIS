@@ -59,6 +59,14 @@
     gap: 1rem;
   }
   
+  .competencies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 8rem;
+    max-height: 200px;
+    overflow-y: auto;
+  }
   .competency-row {
     display: flex;
     align-items: center;
@@ -80,13 +88,32 @@
     padding-right: 2.5rem;
   }
   
+  
+  .competency-level-wrapper {
+    position: relative;
+  }
+  .competency-level-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('/assets/crossDown.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+  }
   .competency-level {
     width: 80px;
-    padding: 0.75rem;
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
     text-align: center;
+    appearance: none;
+    background: transparent;
   }
   
   .competency-remove {

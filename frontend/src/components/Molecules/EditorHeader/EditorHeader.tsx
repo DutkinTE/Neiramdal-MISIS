@@ -11,7 +11,7 @@ export const EditorHeader: React.FC<EditorHeaderProps> = ({
   onTabChange
 }) => {
   const tabs = [
-    { id: 'info', label: 'Основная информация', icon: '/assets/order.svg' },
+    { id: 'info', label: 'Основная информация', icon: '/assets/orderBlack.svg' },
     { id: 'requirements', label: 'Требования' },
     { id: 'reward', label: 'Награда' }
   ];

@@ -1,11 +1,11 @@
 .editor {
-    padding: 2rem 0;
+    
   }
   
   .editor-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 5.3rem;
   }
   
   .editor-descriptions {
@@ -14,21 +14,20 @@
     gap: 2rem;
   }
   
+ 
+  .editor-field,
   .editor-options {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 16px;
   }
-  
-  .editor-field,
   .editor-option {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
   }
   
   .editor-label {
-    font-size: 1.1rem;
     font-weight: 500;
     color: #000;
     margin: 0;
@@ -55,28 +54,33 @@
   
   .editor-input--textarea {
     width: 100%;
-    resize: vertical;
     min-height: 120px;
+    resize: none;
+    padding: 12px 16px;
   }
   
   .editor-select {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
+    padding: 10px 14px;
+    border: 1px solid var(--lightThemeBorderInput);
+    background-color: var(--lightThemeBackgroundInput);
     border-radius: 8px;
     font-size: 1rem;
-    background-color: white;
+    color:var(--lightThemePlaceholderInput) ;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
   }
   
   .editor-select:focus {
     outline: none;
-    border-color: var(--mainLightThemeTextColorActive);
+    border-color: var(--lightThemeBorderInputHover);
+    color:var(--lightThemePlaceholderHover) ;
+    background-color: var(--lightThemeBackgroundInputHover);
   }
   
   .editor-select:disabled {
-    background-color: #f9f9f9;
-    color: #999;
+    background-color: var(--lightThemeBackgroundInputDisable);
+    color: var(--lightThemePlaceholderHover) ;
     cursor: not-allowed;
+    border: none;
   }

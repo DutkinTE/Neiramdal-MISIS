@@ -15,7 +15,7 @@ export class RequirementsTab extends Component<RequirementsTabProps, Requirement
   constructor(props: RequirementsTabProps) {
     super(props);
     this.state = {
-      selectedMissions: [],
+      selectedMissions: ['', ''], 
       selectedRank: ''
     };
   }
@@ -54,29 +54,31 @@ export class RequirementsTab extends Component<RequirementsTabProps, Requirement
           <div className='requirementsTab-left'>
             <h3 className='requirementsTab-title'>Обязательные миссии</h3>
             
-            <div className='missions-list'>
-              {selectedMissions.map((mission, index) => (
-                <div key={index} className='mission-select-wrapper'>
-                  <select
-                    className='mission-select'
-                    value={mission}
-                    onChange={(e) => this.handleMissionChange(index, e.target.value)}
-                  >
-                    <option value="">Выбрать</option>
-                    {missions.map((missionOption, missionIndex) => (
-                      <option key={missionIndex} value={missionOption}>
-                        {missionOption}
-                      </option>
-                    ))}
-                  </select>
-                  <button 
-                    className='mission-remove'
-                    onClick={() => this.handleRemoveMission(index)}
-                  >
-                    <img src="/assets/crossDown.svg" alt="Удалить" />
-                  </button>
-                </div>
-              ))}
+            <div className='missions-scrollable'>
+              <div className='missions-list'>
+                {selectedMissions.map((mission, index) => (
+                  <div key={index} className='mission-select-wrapper'>
+                    <select
+                      className='mission-select'
+                      value={mission}
+                      onChange={(e) => this.handleMissionChange(index, e.target.value)}
+                    >
+                      <option value="">Выбрать</option>
+                      {missions.map((missionOption, missionIndex) => (
+                        <option key={missionIndex} value={missionOption}>
+                          {missionOption}
+                        </option>
+                      ))}
+                    </select>
+                    <button 
+                      className='mission-remove'
+                      onClick={() => this.handleRemoveMission(index)}
+                    >
+                      <img src="/assets/cross.svg" alt="Удалить" />
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <button 

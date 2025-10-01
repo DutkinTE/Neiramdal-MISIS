@@ -18,14 +18,14 @@ interface RewardTabState {
 }
 
 export class RewardTab extends Component<RewardTabProps, RewardTabState> {
-  private nextId = 0;
+  private nextId = 1;
 
   constructor(props: RewardTabProps) {
     super(props);
     this.state = {
       experience: 0,
       shards: 0,
-      competencies: []
+      competencies: [{ id: 0, skill: '', level: 1 }] 
     };
   }
 
@@ -93,7 +93,7 @@ export class RewardTab extends Component<RewardTabProps, RewardTabState> {
         <div className='rewardTab-competencies'>
           <h3 className='rewardTab-title'>Уровень компетенций</h3>
           
-          <div className='competencies-scrollable'>
+          <div className='competencies-list'>
             {competencies.map(comp => (
               <div key={comp.id} className='competency-row'>
                 <select
@@ -107,20 +107,23 @@ export class RewardTab extends Component<RewardTabProps, RewardTabState> {
                   ))}
                 </select>
                 
-                <input
-                  className='competency-level'
-                  type="number"
-                  value={comp.level}
-                  onChange={(e) => this.handleCompetencyChange(comp.id, 'level', parseInt(e.target.value) || 1)}
-                  min="1"
-                  max="10"
-                />
+                <div className='competency-level-wrapper'>
+                  <input
+                    className='competency-level'
+                    type="number"
+                    step="0.1"
+                    value={comp.level}
+                    onChange={(e) => this.handleCompetencyChange(comp.id, 'level', parseFloat(e.target.value) || 1)}
+                    min="1"
+                    max="10"
+                  />
+                </div>
                 
                 <button 
                   className='competency-remove'
                   onClick={() => this.handleRemoveCompetency(comp.id)}
                 >
-                  <img src="/assets/crossDown.svg" alt="Удалить" />
+                  <img src="/assets/cross.svg" alt="Удалить" />
                 </button>
               </div>
             ))}

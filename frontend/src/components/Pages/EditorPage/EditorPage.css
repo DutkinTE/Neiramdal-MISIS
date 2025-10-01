@@ -1,0 +1,10 @@
+.editorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: var(--lightThemeBackgroundBlockColor);
+    border-radius: 20px;
+    width: 68.1rem;
+    height: 40.8rem;
+}

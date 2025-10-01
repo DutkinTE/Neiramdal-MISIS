@@ -8,6 +8,14 @@
   --lightThemeBackgraundActive: #E9F2FF;
   --lightThemeBackgraundPress: #D1E3FF;
   --lightThemeBackgroundTitleColor: #000000;
+  --lightThemeBackgroundInput: hsla(215, 100%, 96%, 0.1);
+  --lightThemeBorderInput: hsla(213, 28%, 40%, 0.2);
+  --lightThemePlaceholderInput: hsla(213, 28%, 40%, 0.6);
+  --lightThemeBackgroundInputHover: hsla(215, 100%, 96%, 0.4);
+  --lightThemeBorderInputHover: #4A6484;
+  --lightThemePlaceholderInputHover: hsla(213, 28%, 40%, 0.4);
+  --lightThemeBackgroundInputDisable: hsla(213, 28%, 40%, 0.1);
+  
   height: 100%;
 }
 
