@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:neiramdal_misis/features/auth/models/user.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/appbar_icon_button.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/shop_card.dart';
 
@@ -12,8 +13,26 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
+  UserModel? _user;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final user = await UserStorage.getUserData();
+    setState(() {
+      _user = user;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_user == null) {
+      return Center(child: CircularProgressIndicator());
+    }
     return Scaffold(
       body: Stack(
         children: [
@@ -107,7 +126,7 @@ class _ShopScreenState extends State<ShopScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              '20000',
+                              _user!.money.toString(),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,

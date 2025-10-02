@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RankProgressbar extends StatefulWidget {
-  const RankProgressbar({super.key});
+  final int start;
+  final int end;
+  const RankProgressbar({super.key, required this.start, required this.end});
 
   @override
   State<RankProgressbar> createState() => _RankProgressbarState();
@@ -42,7 +44,7 @@ class _RankProgressbarState extends State<RankProgressbar> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '3025',
+                    widget.start.toString(),
                     style: TextStyle(
                       color: Color.fromRGBO(255, 227, 148, 1),
                       fontSize: 16,
@@ -50,7 +52,7 @@ class _RankProgressbarState extends State<RankProgressbar> {
                     ),
                   ),
                   Text(
-                    '/3500 XP',
+                    '/${widget.end} XP',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
@@ -65,7 +67,7 @@ class _RankProgressbarState extends State<RankProgressbar> {
           LinearProgressIndicator(
             minHeight: 8,
             borderRadius: BorderRadius.circular(10),
-            value: 0.864,
+            value: widget.start / widget.end,
             color: Color.fromRGBO(0, 174, 239, 1),
             backgroundColor: Color.fromRGBO(42, 44, 69, 1),
           ),

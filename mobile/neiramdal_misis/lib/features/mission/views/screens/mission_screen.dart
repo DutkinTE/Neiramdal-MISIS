@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:neiramdal_misis/features/auth/models/user.dart';
+import 'package:neiramdal_misis/features/mission/repositories/mission_repository.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/appbar_icon_button.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/mission_card.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/rank_progressbar.dart';
@@ -14,8 +16,26 @@ class MissionScreen extends StatefulWidget {
 
 class _MissionScreenState extends State<MissionScreen> {
   bool isSelectedStep = false;
+  UserModel? _user;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final user = await UserStorage.getUserData();
+    setState(() {
+      _user = user;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_user == null) {
+      return Center(child: CircularProgressIndicator());
+    }
     return isSelectedStep
         ? Scaffold(
             body: Stack(
@@ -49,7 +69,10 @@ class _MissionScreenState extends State<MissionScreen> {
                       ),
                     ),
                     ListView(
-                      padding: EdgeInsets.only(bottom: 50, top: kIsWeb ? 100 : 130),
+                      padding: EdgeInsets.only(
+                        bottom: 50,
+                        top: kIsWeb ? 100 : 130,
+                      ),
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +155,10 @@ class _MissionScreenState extends State<MissionScreen> {
                             ),
 
                             AppBarIconButton(
-                              func: () {},
+                              func: () {
+                                print(1);
+                                MissionRepository().getMission(rank: 'seeker');
+                              },
                               icon: SvgPicture.asset(
                                 'lib/assets/images/notificationIcon.svg',
                               ),
@@ -179,7 +205,7 @@ class _MissionScreenState extends State<MissionScreen> {
                             style: TextTheme.of(context).titleMedium,
                           ),
                           SizedBox(height: 16),
-                          RankProgressbar(),
+                          RankProgressbar(start: _user!.experience, end: 3500),
                           SizedBox(height: 32),
                           Text(
                             'Выберите этап',

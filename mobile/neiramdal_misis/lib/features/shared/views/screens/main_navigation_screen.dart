@@ -1,7 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:neiramdal_misis/features/home/bloc/home_bloc.dart';
 import 'package:neiramdal_misis/features/home/views/screens/home_screen.dart';
 import 'package:neiramdal_misis/features/mission/views/screens/mission_screen.dart';
 import 'package:neiramdal_misis/features/profile/views/screens/profile_screen.dart';
@@ -33,7 +35,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 
   void _onItemTapped(int index) {
-
     setState(() {
       _selectedIndex = index;
     });
@@ -41,47 +42,50 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _widgetOptions[_selectedIndex],
+    return MultiBlocProvider(
+      providers: [BlocProvider<HomeBloc>(create: (context) => HomeBloc())],
+      child: Scaffold(
+        body: _widgetOptions[_selectedIndex],
 
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        decoration: BoxDecoration(color: Color.fromRGBO(40, 62, 149, 1)),
-        height: 70,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildNavItem(
-              index: 0,
-              icon: 'lib/assets/images/homeIcon.svg',
-              activeIcon: 'lib/assets/images/homeActiveIcon.svg',
-              label: 'Главная',
-            ),
-            _buildNavItem(
-              index: 1,
-              icon: 'lib/assets/images/ratingIcon.svg',
-              activeIcon: 'lib/assets/images/ratingActiveIcon.svg',
-              label: 'Рейтинг',
-            ),
-            _buildNavItem(
-              index: 2,
-              icon: 'lib/assets/images/missionIcon.svg',
-              activeIcon: 'lib/assets/images/missionActiveIcon.svg',
-              label: 'Миссии',
-            ),
-            _buildNavItem(
-              index: 3,
-              icon: 'lib/assets/images/storeIcon.svg',
-              activeIcon: 'lib/assets/images/storeActiveIcon.svg',
-              label: 'Магазин',
-            ),
-            _buildNavItem(
-              index: 4,
-              icon: 'lib/assets/images/profileIcon.svg',
-              activeIcon: 'lib/assets/images/profileActiveIcon.svg',
-              label: 'Профиль',
-            ),
-          ],
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(color: Color.fromRGBO(40, 62, 149, 1)),
+          height: 70,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildNavItem(
+                index: 0,
+                icon: 'lib/assets/images/homeIcon.svg',
+                activeIcon: 'lib/assets/images/homeActiveIcon.svg',
+                label: 'Главная',
+              ),
+              _buildNavItem(
+                index: 1,
+                icon: 'lib/assets/images/ratingIcon.svg',
+                activeIcon: 'lib/assets/images/ratingActiveIcon.svg',
+                label: 'Рейтинг',
+              ),
+              _buildNavItem(
+                index: 2,
+                icon: 'lib/assets/images/missionIcon.svg',
+                activeIcon: 'lib/assets/images/missionActiveIcon.svg',
+                label: 'Миссии',
+              ),
+              _buildNavItem(
+                index: 3,
+                icon: 'lib/assets/images/storeIcon.svg',
+                activeIcon: 'lib/assets/images/storeActiveIcon.svg',
+                label: 'Магазин',
+              ),
+              _buildNavItem(
+                index: 4,
+                icon: 'lib/assets/images/profileIcon.svg',
+                activeIcon: 'lib/assets/images/profileActiveIcon.svg',
+                label: 'Профиль',
+              ),
+            ],
+          ),
         ),
       ),
     );

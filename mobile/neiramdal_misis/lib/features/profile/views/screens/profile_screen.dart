@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:neiramdal_misis/features/auth/auth.dart';
 import 'package:neiramdal_misis/features/shared/views/widgets/appbar_icon_button.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -11,8 +13,30 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  UserModel? _user;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final user = await UserStorage.getUserData();
+    setState(() {
+      _user = user;
+    });
+  }
+
+  void logout() {
+    context.read<AuthBloc>().add(Logout());
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_user == null) {
+      return Center(child: CircularProgressIndicator());
+    }
     return Scaffold(
       body: Stack(
         children: [
@@ -59,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Image.asset('lib/assets/images/avatar.png'),
                           SizedBox(height: 10),
                           Text(
-                            'Дуткин Тимур',
+                            '${_user!.lastName} ${_user!.firstName}',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -149,7 +173,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                   ),
                                                   SizedBox(height: 8),
                                                   Text(
-                                                    '3025 XP',
+                                                    _user!.experience
+                                                        .toString(),
                                                     style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 16,
@@ -502,7 +527,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       AppBarIconButton(
-                        func: () {},
+                        func: () => logout(),
                         icon: SvgPicture.asset(
                           'lib/assets/images/settingsIcon.svg',
                         ),
