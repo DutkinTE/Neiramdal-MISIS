@@ -1,0 +1,76 @@
+.CandidateFunnel {
+    width: 75rem;
+    height: 26.1rem;
+    padding: 30px;
+    background-color: var(--lightThemeBackgroundBlockColor);
+    border-radius: 20px;
+    box-shadow: 0 2px 10px 0 rgba(40, 62, 149, 0.2);
+}
+
+.CandidateFunnel_title {
+    margin: 0 0 32px 0;
+    color: var(--lightThemeBackgroundTitleColor);
+    font-weight: 500;
+}
+
+.CandidateFunnel_content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.CandidateFunnel_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CandidateFunnel_label {
+    width: 300px;
+}
+
+.CandidateFunnel_label h4 {
+    font-weight: 500;
+}
+
+.CandidateFunnel_stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+}
+
+.CandidateFunnel_line {
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.CandidateFunnel_lineText {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.CandidateFunnel_item:nth-child(1) .CandidateFunnel_line {
+    background-color: #4345BA;
+}
+
+.CandidateFunnel_item:nth-child(2) .CandidateFunnel_line {
+    background-color: #283E95;
+}
+
+.CandidateFunnel_item:nth-child(3) .CandidateFunnel_line {
+    background-color: #005DAC;
+}
+
+.CandidateFunnel_item:nth-child(4) .CandidateFunnel_line {
+    background-color: #00AEEF;
+}
+
+.CandidateFunnel_item:nth-child(5) .CandidateFunnel_line {
+    background-color: #6ACFF6;
+}

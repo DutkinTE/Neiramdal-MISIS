@@ -1,0 +1,118 @@
+.requirementsTab {
+  padding: 2rem 0;
+}
+
+.requirementsTab-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.requirementsTab-left,
+.requirementsTab-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.requirementsTab-title {
+  font-weight: 500;
+  color: var(--mainLightTextColor);
+  margin: 0;
+}
+
+.missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mission-select-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.mission-select {
+  flex: 1;
+  width: 27rem;
+  padding: 10px 15px;
+  height: 40px;
+  border: 1px solid var(--lightThemeBorderInput);
+  border-radius: 8px;
+  background: transparent;
+  font-size: 1rem;
+  appearance: none;
+  background-image: url('/assets/crossDown.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+  padding-right: 2.5rem;
+  
+}
+.mission-select:placeholder {
+  color: var(--lightThemePlaceholderInput);
+}
+
+.mission-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mission-remove:hover {
+  cursor: pointer;
+}
+
+.mission-remove img {
+}
+
+
+.add-mission-btn {
+  padding: 10px;
+  width: 31.8rem;
+  border: 1px solid var(--lightThemeBorderInput);
+  border-radius: 10px;
+  background: transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--mainLightThemeTextColorActive);
+}
+.missions-scrollable {
+    width: 33.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.add-mission-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.rank-select-wrapper {
+  display: flex;
+}
+
+.rank-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--lightThemeBorderInput);
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 1rem;
+  appearance: none;
+  background-image: url('/assets/crossDown.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+  padding-right: 2.5rem;
+  color: var(--lightThemeBackgroundTitleColor);
+}
+
+.mission-select:focus,
+.rank-select:focus {
+  outline: none;
+  border-color: var(--mainLightThemeTextColorActive);
+}

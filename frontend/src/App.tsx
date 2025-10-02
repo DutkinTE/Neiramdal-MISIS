@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import SideMenu from "./components/Organisms/SideMenu/SideMenu";
+import { Routes, Route, useLocation } from 'react-router-dom';
+import LogInPage from "./components/Pages/LogInPage/LogInPage"
+import Dashboard from "./components/Pages/Dashboard/Dashboard"
+import EditorPage from "./components/Pages/EditorPage/EditorPage"
+import SettingPage from './components/Pages/SettingPage/SettingPage'
+import HelpPage from './components/Pages/HelpPage/HelpPage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/logIn';
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={`App ${isLoginPage ? 'App--login' : ''}`}>
+      {!isLoginPage && <SideMenu/>}
+      
+      <div className='App_content'>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/logIn" element={<LogInPage />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/editor" element={<EditorPage />} />
+          <Route path='/settings' element={<SettingPage/>}/>
+          <Route path='/help' element={<HelpPage/>}/>
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
