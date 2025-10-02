@@ -1,12 +1,12 @@
 .rewardTab {
-  padding: 2rem 0;
+  padding-bottom: 3rem ;
 }
 
 .rewardTab-main {
   display: flex;
   flex-direction: row;
   gap: 64px;
-  margin-bottom: 3rem;
+  margin-bottom: 16px;
 }
 
 .rewardTab-field {
@@ -63,7 +63,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 8rem;
+  height: 9.5rem;
   max-height: 200px;
   overflow-y: auto;
   line-height: 1;
@@ -80,6 +80,7 @@
   border: 1px solid var(--lightThemeBorderInput);
   border-radius: 12px;
   width: 27.1rem;
+  height: 44px;
   background: transparent;
   font-size: 1.3rem;
   appearance: none;
@@ -134,11 +135,13 @@
 }
 
 .add-competency-btn {
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 10px 0px;
+  width: 43.8rem;
+  border: 1px solid var(--mainLightThemeTextColorActive);
+  color: var(--mainLightThemeTextColorActive);
+  border-radius: 10px;
   background: transparent;
-  font-size: 1rem;
+  font-size: 1.3rem;
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;

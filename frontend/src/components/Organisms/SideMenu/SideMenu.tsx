@@ -37,7 +37,7 @@ const SideMenu = () => {
                 alt="Icon"
                 title="Заявки"
                 to="/applications" 
-                badgeText="14" /// сюда бэк передайте с кол-вом заявок
+                badgeText="14" /// сюда бэк передайте с кол-вом заявок Андрей Тимур
                 />
             </div>
             </div>
@@ -57,7 +57,7 @@ const SideMenu = () => {
                         activeIcon="/assets/UsersHeavy.svg" 
                         alt="Icon"
                         title="Пользователи"
-                        to="/Users" 
+                        to="/users" 
                     />
                 </div>
             </div>
@@ -80,7 +80,7 @@ const SideMenu = () => {
                     activeIcon="/assets/moonThin.svg" 
                     alt="Icon"
                     title="Темная тема"
-                    to="/darkTheme"  //доделать
+                    to="/darkTheme"  
                 />
                 </div>
                 

@@ -12,8 +12,9 @@ interface EditorPageState {
   activeTab: string;
   hasSelectedMission: boolean;
 }
-class EditorPage extends Component< EditorPageState> {
-  constructor(props: {}) {
+
+class EditorPage extends Component<EditorPageProps, EditorPageState> { 
+  constructor(props: EditorPageProps) { 
     super(props);
     this.state = {
       activeTab: 'info',

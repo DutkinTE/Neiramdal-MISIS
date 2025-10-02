@@ -6,6 +6,8 @@ import Dashboard from "./components/Pages/Dashboard/Dashboard"
 import EditorPage from "./components/Pages/EditorPage/EditorPage"
 import SettingPage from './components/Pages/SettingPage/SettingPage'
 import HelpPage from './components/Pages/HelpPage/HelpPage';
+import UserPage from './components/Pages/UserPage/UserPage';
+import Applications from './components/Pages/Applications/Applications';
 
 function App() {
   const location = useLocation();
@@ -23,6 +25,8 @@ function App() {
           <Route path="/editor" element={<EditorPage />} />
           <Route path='/settings' element={<SettingPage/>}/>
           <Route path='/help' element={<HelpPage/>}/>
+          <Route path='/users' element={<UserPage/>}/>
+          <Route path='/applications' element={<Applications/>}/>
         </Routes>
       </div>
     </div>

@@ -1,0 +1,12 @@
+.MissionsTab-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.MissionsTab-contentBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+}
