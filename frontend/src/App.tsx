@@ -5,6 +5,7 @@ import LogInPage from "./components/Pages/LogInPage/LogInPage"
 import Dashboard from "./components/Pages/Dashboard/Dashboard"
 import EditorPage from "./components/Pages/EditorPage/EditorPage"
 import SettingPage from './components/Pages/SettingPage/SettingPage'
+import HelpPage from './components/Pages/HelpPage/HelpPage';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/editor" element={<EditorPage />} />
           <Route path='/settings' element={<SettingPage/>}/>
+          <Route path='/help' element={<HelpPage/>}/>
         </Routes>
       </div>
     </div>

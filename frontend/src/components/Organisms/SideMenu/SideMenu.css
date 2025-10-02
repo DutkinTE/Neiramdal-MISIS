@@ -45,3 +45,7 @@
     margin-bottom: 32px;
 }
 
+.darkTheme {
+    pointer-events: none;
+    opacity: 0.5;
+}

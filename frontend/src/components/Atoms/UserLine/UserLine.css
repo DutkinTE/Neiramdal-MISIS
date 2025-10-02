@@ -1,0 +1,52 @@
+.UserLine-block {
+    padding: 10px 20px;
+    width: 33.7rem;
+    height: 3.3rem;
+    background-color: var(--backgraundColorUserLineLightTheme);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.UserLine-block_leftSide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: var(--lightThemeBackgroundTitleColor);
+}
+
+.UserLine-block_nameLastname {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: var(--mainLightTextColor);
+    
+}
+
+.UserLine-block_img {
+    width: 40px;
+    height: 40px;
+    border-radius:160px;
+    background-color:white;
+    background-size: cover; 
+    background-position: center; 
+}
+
+.UserLine-block_XP {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    min-width: 60px;
+    color: var(--lightThemeBackgroundBlockColor);
+    background-color: var(--lightThemeAccentColor);
+}
+
+.UserLine-block_XP h5 {
+    font-weight: 400;
+}

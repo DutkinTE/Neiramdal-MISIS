@@ -1,6 +1,6 @@
 .CandidateFunnel {
-    width: 900px;
-    height: 400px;
+    width: 75rem;
+    height: 26.1rem;
     padding: 30px;
     background-color: var(--lightThemeBackgroundBlockColor);
     border-radius: 20px;
@@ -9,14 +9,14 @@
 
 .CandidateFunnel_title {
     margin: 0 0 32px 0;
-    color: #000000;
+    color: var(--lightThemeBackgroundTitleColor);
     font-weight: 500;
 }
 
 .CandidateFunnel_content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px;
 }
 
 .CandidateFunnel_item {
@@ -55,7 +55,6 @@
     font-weight: 500;
 }
 
-/* Правильные селекторы для линий */
 .CandidateFunnel_item:nth-child(1) .CandidateFunnel_line {
     background-color: #4345BA;
 }

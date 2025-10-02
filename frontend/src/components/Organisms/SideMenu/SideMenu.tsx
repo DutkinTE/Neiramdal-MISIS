@@ -74,13 +74,16 @@ const SideMenu = () => {
                     title="Настройки"
                     to="/settings" 
                 />
+                <div className='darkTheme'>
                 <MenuChoose 
-                    srcIcon="/assets/settingsThin.svg"
-                    activeIcon="/assets/settingsHeavy.svg" 
+                    srcIcon="/assets/moonThin.svg"
+                    activeIcon="/assets/moonThin.svg" 
                     alt="Icon"
-                    title="Темная тема !!!"
+                    title="Темная тема"
                     to="/darkTheme"  //доделать
                 />
+                </div>
+                
                 <div onClick={handleLogoutClick}>
                     <MenuChoose 
                         srcIcon="/assets/logOutThin.svg"

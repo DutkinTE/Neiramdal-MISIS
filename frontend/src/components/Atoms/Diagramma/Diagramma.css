@@ -1,0 +1,64 @@
+.diagramma {
+    width: 38.4rem;
+    height: 18.7rem;
+    padding: 30px;
+    border-radius: 20px; 
+    box-shadow: 0 2px 10px 0 rgba(40, 62, 149, 0.2); 
+    
+  }
+  
+  .diagramma--light {
+    background-color: var(--lightThemeBackgroundBlockColor);
+  }
+  
+  .diagramma__title {
+    color: var(--lightThemeBackgroundTitleColor);
+    margin: 0 0 20px 0;
+  }
+  
+  .diagramma__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: calc(100% - 3.125rem); 
+  }
+  
+  .diagramma__sources {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+  }
+  
+  .diagramma__source-item {
+    display: flex;
+    align-items: center;
+    gap: 32px; 
+  }
+  
+  .diagramma__color-square {
+    width: 20px; 
+    height: 20px; 
+    border-radius: 5px; 
+    flex-shrink: 0;
+  }
+  
+  .diagramma__source-name {
+    color: var(--mainLightTextColor);
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  .diagramma__chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .diagramma__pie {
+    display: block;
+  }
+  
+  .diagramma__segment {
+    transition: stroke-dasharray 0.3s ease;
+  }
+  

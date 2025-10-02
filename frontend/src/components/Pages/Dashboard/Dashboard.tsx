@@ -1,6 +1,9 @@
 import './Dashboard.css';
 import StatisticUpperDashboard from "../../Atoms/StatisticUpperDashboard/StatisticUpperDashboard.tsx";
 import CandidateFunnel from "../../Atoms/CandidateFunnel/CandidateFunnel.tsx";
+import Diagramma from "../../Atoms/Diagramma/Diagramma.tsx";
+import MockDashboardComponent from "../../Atoms/MockDashboardComponent/MockDashboardComponent.tsx"
+import UserRating from '../../Molecules/UserRating/UserRating.tsx';
 
 
 const Dashboard = () => {
@@ -50,17 +53,19 @@ const Dashboard = () => {
                     />
                 </div>
 
-                <div>
+                <div className='Dashboard-lowerStatistic'>
                     <div className='Dashboatd-trafficSources'>
+                    <Diagramma 
+                    />
                     </div>
                     <div className='Dashboatd-bid'>
-                
+                    <MockDashboardComponent/>
                     </div>
                 </div>
             </div>
 
             <div className='Dashboard-rating'>
-
+                <UserRating/>
             </div>
         </div>
       </div>
