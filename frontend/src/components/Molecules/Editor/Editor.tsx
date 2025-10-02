@@ -28,7 +28,7 @@ export class Editor extends Component<EditorProps, EditorState> {
   handleStageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({ 
       selectedStage: event.target.value,
-      selectedBranch: '' // сбрасываем ветку при смене этапа
+      selectedBranch: '' 
     });
   };
 

@@ -10,6 +10,7 @@
     text-decoration: none; 
     color: inherit; 
     font-weight: 300; 
+    
 }
 
 .MenuChoose:not(.MenuChoose--active):hover {

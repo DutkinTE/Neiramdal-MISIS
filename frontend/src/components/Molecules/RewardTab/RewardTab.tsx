@@ -91,7 +91,7 @@ export class RewardTab extends Component<RewardTabProps, RewardTabState> {
         </div>
 
         <div className='rewardTab-competencies'>
-          <h3 className='rewardTab-title'>Уровень компетенций</h3>
+          <h4 className='rewardTab-title'>Уровень компетенций</h4>
           
           <div className='competencies-list'>
             {competencies.map(comp => (
@@ -123,7 +123,7 @@ export class RewardTab extends Component<RewardTabProps, RewardTabState> {
                   className='competency-remove'
                   onClick={() => this.handleRemoveCompetency(comp.id)}
                 >
-                  <img src="/assets/cross.svg" alt="Удалить" />
+                  <img src="/assets/crossMissionEditor.svg" alt="Удалить" />
                 </button>
               </div>
             ))}

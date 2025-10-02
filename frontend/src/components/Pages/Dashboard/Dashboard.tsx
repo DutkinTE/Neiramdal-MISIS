@@ -10,10 +10,10 @@ const Dashboard = () => {
 
     const funnelData = [
         { value: 3000 },
-        { value: 1500 },
+        { value: 1300 },
         { value: 800 },
         { value: 400 },
-        { value: 350 }
+        { value: 300 }
     ];
 
     return (

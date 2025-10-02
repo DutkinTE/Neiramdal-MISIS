@@ -1,66 +1,69 @@
 .editor {
     
-  }
-  
-  .editor-content {
+}
+
+.editor-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5.3rem;
-  }
-  
-  .editor-descriptions {
+}
+
+.editor-descriptions {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
-  
- 
-  .editor-field,
-  .editor-options {
+}
+
+
+.editor-field,
+.editor-options {
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-  .editor-option {
+}
+.editor-option {
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  
-  .editor-label {
+}
+
+.editor-label {
     font-weight: 500;
-    color: #000;
+    color: var(--lightThemeBackgroundTitleColor);
     margin: 0;
-  }
-  
-  .editor-input {
+}
+
+.editor-input {
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--lightThemeBackgroundInputDisable);
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
-  }
-  
-  .editor-input:focus {
+}
+
+.editor-input:focus {
     outline: none;
     border-color: var(--mainLightThemeTextColorActive);
-  }
-  
-  .editor-input--text {
-    width: 100%;
-  }
-  
-  .editor-input--textarea {
-    width: 100%;
-    min-height: 120px;
+}
+
+.editor-input--text {
+    width: 33.3rem;
+    height: 4rem;
+    padding: 12px 16px;
+}
+
+.editor-input--textarea {
+    width: 33.3rem;
+    min-height: 7.3rem;
     resize: none;
     padding: 12px 16px;
-  }
-  
-  .editor-select {
+}
+
+.editor-select {
     width: 100%;
+    height: 40px;
     padding: 10px 14px;
     border: 1px solid var(--lightThemeBorderInput);
     background-color: var(--lightThemeBackgroundInput);
@@ -69,18 +72,18 @@
     color:var(--lightThemePlaceholderInput) ;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
-  }
-  
-  .editor-select:focus {
+}
+
+.editor-select:focus {
     outline: none;
     border-color: var(--lightThemeBorderInputHover);
     color:var(--lightThemePlaceholderHover) ;
     background-color: var(--lightThemeBackgroundInputHover);
-  }
-  
-  .editor-select:disabled {
+}
+
+.editor-select:disabled {
     background-color: var(--lightThemeBackgroundInputDisable);
     color: var(--lightThemePlaceholderHover) ;
     cursor: not-allowed;
     border: none;
-  }
+}

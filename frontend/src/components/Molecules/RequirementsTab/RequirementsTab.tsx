@@ -52,7 +52,7 @@ export class RequirementsTab extends Component<RequirementsTabProps, Requirement
       <div className='requirementsTab'>
         <div className='requirementsTab-content'>
           <div className='requirementsTab-left'>
-            <h3 className='requirementsTab-title'>Обязательные миссии</h3>
+            <h4 className='requirementsTab-title'>Обязательные миссии</h4>
             
             <div className='missions-scrollable'>
               <div className='missions-list'>
@@ -74,7 +74,7 @@ export class RequirementsTab extends Component<RequirementsTabProps, Requirement
                       className='mission-remove'
                       onClick={() => this.handleRemoveMission(index)}
                     >
-                      <img src="/assets/cross.svg" alt="Удалить" />
+                      <img src="/assets/crossMissionEditor.svg" alt="Удалить" />
                     </button>
                   </div>
                 ))}
@@ -90,7 +90,7 @@ export class RequirementsTab extends Component<RequirementsTabProps, Requirement
           </div>
 
           <div className='requirementsTab-right'>
-            <h3 className='requirementsTab-title'>Ранг</h3>
+            <h4 className='requirementsTab-title'>Ранг</h4>
             
             <div className='rank-select-wrapper'>
               <select

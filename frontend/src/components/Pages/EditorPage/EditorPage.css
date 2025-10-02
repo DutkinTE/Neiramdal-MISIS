@@ -1,5 +1,25 @@
 .editorPage {
     display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+
+.editorPage-leftBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: var(--lightThemeBackgroundBlockColor);
+    border-radius: 20px;
+    width: 44.4rem;
+    height: 72.3rem;
+    box-shadow: 0 2px 10px 0 rgba(40, 62, 149, 0.2);
+}
+
+.editorPage-rightBlock {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 30px;
@@ -7,4 +27,5 @@
     border-radius: 20px;
     width: 68.1rem;
     height: 40.8rem;
+    box-shadow: 0 2px 10px 0 rgba(40, 62, 149, 0.2);
 }
